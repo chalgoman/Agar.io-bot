@@ -332,8 +332,13 @@ console.log("Running Bot Launcher!");
                 setTimeout(Za, 1E3)
             },
             success: function(b) {
-                console.warn('CONNECTING!!!!!!!!!!!', b.ip);
-                a == Ba && (b.alert && alert(b.alert), Ca("ws://" + b.ip, b.token))
+                if (b.ip.split(':')[1] !== '443') {
+                    console.warn('Port is different than 443.');
+                    console.warn('Reconnecting after 1 second...');
+                    setTimeout(Za, 1000);
+                } else {
+                    a == Ba && (b.alert && alert(b.alert), Ca("ws://" + b.ip, b.token))
+                }
             },
             dataType: "json",
             method: "POST",
