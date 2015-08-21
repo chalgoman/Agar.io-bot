@@ -986,7 +986,7 @@ console.log("Running Bot Launcher!");
         debugStrings.push("Best Score: " + ~~(sessionScore / 100));
         debugStrings.push("Best Time: " + bestTime + " seconds");
         debugStrings.push("");
-        debugStrings.push(serverIP);
+        debugStrings.push("EDNO", serverIP);
 
         if (getPlayer().length > 0) {
             var offsetX = -getMapStartX();
