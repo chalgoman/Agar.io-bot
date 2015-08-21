@@ -332,6 +332,7 @@ console.log("Running Bot Launcher!");
                 setTimeout(Za, 1E3)
             },
             success: function(b) {
+                console.warn('CONNECTING!!!!!!!!!!!', b.ip);
                 a == Ba && (b.alert && alert(b.alert), Ca("ws://" + b.ip, b.token))
             },
             dataType: "json",
@@ -1284,7 +1285,6 @@ console.log("Running Bot Launcher!");
                     d.encodeURIComponent(a));
                 e("#helloContainer").attr("data-party-state", "5");
                 Y(":party");
-                console.warn('connecting!!!!!!!!!!!!!', b[0], a);
                 Ca("ws://" + b[0], a)
             },
             dataType: "text",
