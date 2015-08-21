@@ -1284,6 +1284,7 @@ console.log("Running Bot Launcher!");
                     d.encodeURIComponent(a));
                 e("#helloContainer").attr("data-party-state", "5");
                 Y(":party");
+                console.warn('connecting!!!!!!!!!!!!!', b[0], a);
                 Ca("ws://" + b[0], a)
             },
             dataType: "text",
