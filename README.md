@@ -1,7 +1,7 @@
 # Agar.io-bot
 The aim of the project is to create a bot that can play Agar.io
 
-The full coding process is streamed live on http://www.twitch.tv/apostolique
+The full coding process is streamed live on http://www.twitch.tv/chalgoman
 
 Make sure to install both bot.user.js and launcher.user.js. If you don't mind having the code auto update itself though, you can simply get the loader.user.js without the other two.
 
