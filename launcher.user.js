@@ -4,7 +4,7 @@
 // @include     http://agar.io/*
 // @version     3.063
 // @grant       none
-// @author      http://www.twitch.tv/apostolique
+// @author      http://www.twitch.tv/chalgoman
 // ==/UserScript==
 
 var aposLauncherVersion = 3.063;
@@ -20,7 +20,7 @@ Array.prototype.peek = function() {
 var sha = "efde0488cc2cc176db48dd23b28a20b90314352b";
 function getLatestCommit() {
     window.jQuery.ajax({
-            url: "https://api.github.com/repos/apostolique/Agar.io-bot/git/refs/heads/master",
+            url: "https://api.github.com/repos/chalgoman/Agar.io-bot/git/refs/heads/master",
             cache: false,
             dataType: "jsonp"
         }).done(function(data) {
@@ -40,7 +40,7 @@ function getLatestCommit() {
                 window.jQuery("#" + prefix + "Dialog").show();
             }
 
-            window.jQuery.get('https://raw.githubusercontent.com/Apostolique/Agar.io-bot/master/launcher.user.js?' + Math.floor((Math.random() * 1000000) + 1), function(data) {
+            window.jQuery.get('https://raw.githubusercontent.com/chalgoman/Agar.io-bot/master/launcher.user.js?' + Math.floor((Math.random() * 1000000) + 1), function(data) {
                 var latestVersion = data.replace(/(\r\n|\n|\r)/gm, "");
                 latestVersion = latestVersion.substring(latestVersion.indexOf("// @version") + 11, latestVersion.indexOf("// @grant"));
 
@@ -48,7 +48,7 @@ function getLatestCommit() {
                 var myVersion = parseFloat(aposLauncherVersion + 0.0000);
 
                 if (latestVersion > myVersion) {
-                    update("aposLauncher", "launcher.user.js", "https://github.com/Apostolique/Agar.io-bot/blob/" + sha + "/launcher.user.js/");
+                    update("aposLauncher", "launcher.user.js", "https://github.com/chalgoman/Agar.io-bot/blob/" + sha + "/launcher.user.js/");
                 }
                 console.log('Current launcher.user.js Version: ' + myVersion + " on Github: " + latestVersion);
             });
@@ -2344,21 +2344,21 @@ apos('send', 'pageview');
 window.ignoreStream = false;
 window.refreshTwitch = function() {
     $.ajax({
-        url: "https://api.twitch.tv/kraken/streams/apostolique",
+        url: "https://api.twitch.tv/kraken/streams/chalgoman",
         cache: false,
         dataType: "jsonp"
     }).done(function(data) {
         if (data["stream"] == null) {
-            //console.log("Apostolique is not online!");
+            //console.log("chalgoman is not online!");
             window.setMessage([]);
             window.onmouseup = function() {};
             window.ignoreStream = false;
         } else {
-            //console.log("Apostolique is online!");
+            //console.log("chalgoman is online!");
             if (!window.ignoreStream) {
-                window.setMessage(["twitch.tv/apostolique is online right now!", "Click the screen to open the stream!", "Press E to ignore."]);
+                window.setMessage(["twitch.tv/chalgoman is online right now!", "Click the screen to open the stream!", "Press E to ignore."]);
                 window.onmouseup = function() {
-                    window.open("http://www.twitch.tv/apostolique");
+                    window.open("http://www.twitch.tv/chalgoman");
                 };
             }
         }
